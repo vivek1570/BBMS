@@ -1,0 +1,34 @@
+{% extends 'authenticate/base_2.html' %}
+{% block title%}
+account
+{% endblock %}
+{% block content %}
+{% comment %} 
+<h3 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 30px; font-weight: bold;padding: 20px 0;">Person Info</h3>
+<p>{{ data.p_name }}</p>
+<p>{{ data.p_phone }}</p>
+<p>{{ data.id }}</p> {% endcomment %}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% comment %} <div class="card flex-md-row mb-4 box-shadow h-md-250"> {% endcomment %}
+
+<hr>
+<div class="card flex-md-row mb-4 box-shadow h-md-300" style="padding-left: 40px; padding-right: 0px; border-radius: 10px;">
+    <div class="card-body d-flex flex-column align-items-start">
+        <h3 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 30px; font-weight: bold; padding: 20px 0;">Account Info</h3>
+        <h5 class="card-title pricing-card-title">{{ data.p_name }}</h5>
+        <div class="mb-1 text-muted">Person id:  {{ data.id }}</div>
+        <div class="mb-1 text-muted">Blood group:  {{ data.p_b_group }}</div>
+        <div class="mb-1 text-muted">Phone no:  {{ data.p_phone }}</div>
+        <div class="mb-1 text-muted">Address:  {{ data.p_add }}</div>
+        <div class="mb-1 text-muted">Age:  {{ data.p_age }}</div>
+        <div class="mb-1 text-muted">Location:  {{ data.p_loc }}</div>
+    </div>
+    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px; margin-top: 20px;" src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg">
+</div>
+
+{% endblock %}

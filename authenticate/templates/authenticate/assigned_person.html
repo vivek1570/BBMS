@@ -1,0 +1,31 @@
+{% extends 'authenticate/base_2.html' %}
+
+{% block content %}
+
+{% comment %} <h1 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 36px; font-weight: bold;padding: 20px 0;">Assigned person page</h1>
+
+<p>{{ obj2.d_name }}</p>
+<p>{{ obj2.d_phone }}</p>
+<p>{{ obj2.d_b_group }}</p>
+<p>{{ obj2.d_quantity }}</p>
+<p>{{ obj2.d_date }}</p>
+<p>{{ obj2.d_loc }}</p> {% endcomment %}
+
+<div class="container mt-5">
+    <div class="card">
+     
+      <h3 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 30px; font-weight: bold; padding: 20px 0;">Assigned Person</h3>
+      <hr>
+      <div class="card-body">
+        <h4 class="card-title">{{ obj2.d_name }}</h4>
+        <p class="card-text">ID: {{ obj2.p_id }}</p>
+        <p class="card-text">Blood Group: {{ obj2.d_b_group }}</p>
+        <p class="card-text">Phone: {{ obj2.d_phone }}</p>
+        <p class="card-text">Location: {{ obj2.d_loc }}</p>
+      </div>
+      <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px; margin-top: 20px;" src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg">
+
+    </div>
+  </div>
+
+{% endblock %}

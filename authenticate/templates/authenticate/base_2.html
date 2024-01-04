@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>{% block title %}{% endblock %}</title>
+    {% block extra_head %}{% endblock %}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7; /* Light gray background */
+        }
+
+        #container {
+            display: flex;
+        }
+
+        #sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            background-color: #922b21; /* Dark red background */
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+
+        #sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff; /* White text */
+            display: block;
+            transition: 0.3s;
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 10px; /* Add space between buttons */
+        }
+
+        #sidebar a:hover {
+            background-color: #c0392b; /* Darker red on hover */
+            color: #ffffff; /* White text on hover */
+        }
+
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        #header {
+            background-color: #922b21; /* Dark red background for the header */
+            padding: 15px;
+            color: #ffffff; /* White text for the header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            text-align: center;
+            border-radius: 0 10px 10px 0; /* Rounded corners on the right side */
+        }
+
+        #logout {
+            background-color: #c0392b; /* Darker red background for the logout button */
+            color: #ffffff; /* White text for the logout button */
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 10px; /* Rounded corners */
+            margin-top: 10px; /* Add space between logout button and other buttons */
+        }
+
+        #logout:hover {
+            background-color: #922b21; /* Dark red background on hover */
+            color: #ffffff; /* White text on hover */
+        }
+
+        #carousel {
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 20px; /* Add space between carousel and content */
+        }
+
+        #carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Additional styles for containers inside the main content area */
+        .info-container {
+            background-color: #ffffff; /* White background for containers */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+
+    <div id="sidebar">
+        <a href="{% url 'account' %}">Account</a> 
+        <a href="{% url 'person' %}">Add Person</a>
+        <a href="{% url 'donor' %}">Add Donor</a>
+        {% comment %} <a href="{% url 'receive' %}">Request Blood</a> {% endcomment %}
+        <a href="{% url 'receive' %}">Request Blood</a>
+        <a href="{% url 'stock' %}">Stock</a>
+        <a href="{% url 'search' %}" class="">Search</a>
+        {% comment %} <a href="{% url 'stock' %}">Stock Info</a> {% endcomment %}
+        <a href="{% url 'person_info' %}">Person Info</a>
+        <a href="{% url 'donor_info' %}">Donor Info</a>
+        <a href="{% url 'camp' %}">Donation Camps</a>
+        {% comment %} <a href="{% url 'index' %}">Index page</a> {% endcomment %}
+        <a href="{% url 'logout' %}">
+            <button id="logout">Logout</button>
+          </a>
+          
+    </div>
+
+    <div id="content">
+        <div id="header">
+            <a href="{% url 'baser' %}" style="text-decoration: none;">
+                <h2 style="color: white; font-weight: bold;">Blood Bank Management System</h2>
+            </a>
+        </div>
+        {% block content  %}{% endblock %}
+        <!-- Carousel with information about blood donation -->
+        <!-- <div id="carousel">
+            <img src="./bb3.jpg2" alt="Blood Donation 1">
+            <img src="./bb_2.jpg2" alt="Blood Donation 2">
+            <img src="./blood-bank.jpg2" alt="Blood Donation 3">
+        </div>
+
+        <h2>Welcome to the Blood Bank Management System</h2>
+        <p>This is the main content area.</p>
+
+        <div class="info-container">
+            <h3>Blood Bank Details</h3>
+            <p>Some information about the blood bank...</p>
+        </div>
+
+        <div class="info-container">
+            <h3>Services Provided</h3>
+            <p>Details about the services offered by the blood bank...</p>
+        </div> -->
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

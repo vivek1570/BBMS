@@ -1,0 +1,21 @@
+{% extends 'authenticate/base_2.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%}
+Request Blood
+{% endblock %}
+
+{% block content%}
+<h3 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 30px; font-weight: bold;padding: 20px 0;">Request Blood</h3>
+{% comment %} <hr> {% endcomment %}
+<div class="container w-50 text-center p-3 my-5" style="background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button class="btn btn-primary mb-4" type="submit" style="background-color: #c0392b; color: #ffffff; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; transition: 0.3s; border-radius: 10px;">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}

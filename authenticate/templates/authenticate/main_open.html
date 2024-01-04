@@ -1,0 +1,84 @@
+{% extends 'authenticate/base_2.html' %}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content %}
+{% comment %} 
+<h1>added succesfully</h1>
+<br>
+<p>{{ obj2.d_name }}</p>
+<p>{{ obj2.p_id }}</p>
+
+<p>{{ obj2.d_b_group }}</p> {% endcomment %}
+
+<style>
+
+    {% comment %} .feature-box {
+        width: 300px;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        transition: transform 0.3s;
+    }
+
+    .feature-box:hover {
+        transform: scale(1.05);
+    } {% endcomment %}
+
+    #feature-boxes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .feature-box {
+        width: 300px;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        transition: transform 0.3s;
+    }
+
+    .feature-box:hover {
+        transform: scale(1.05);
+    }
+
+    .feature-box img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div id="feature-boxes">
+    <div class="feature-box">
+        <img src="https://media.istockphoto.com/id/1335544846/photo/senior-human-hand-holding-red-paper-heart-shape-and-red-blood-drop-symbol-on-bandage-for.jpg?s=612x612&w=0&k=20&c=gVXGcm6WOvo-HNqMFztk6QdaQBUr3vDeU1mOfiDrLuI=" alt="Efficient Management">
+        <h3> Management</h3>
+        <p>Optimize blood bank operations with cutting-edge management tools.</p>
+    </div>
+    <div class="feature-box">
+        <img src="https://media.istockphoto.com/id/627356286/photo/general-practitioner-doing-blood-test.jpg?s=612x612&w=0&k=20&c=Zzz_k6JuoDvpmBCKZ_pBzw81yd3awM4hIr6Bf7Zoxig=" alt="Donor Information">
+        <h3>Donor Information</h3>
+        <p>Maintain comprehensive records of donors to ensure a steady and safe blood supply.</p>
+    </div>
+    <div class="feature-box">
+        <img src="https://media.istockphoto.com/id/1328426310/photo/red-blood-shape-in-humans-hand-for-world-blood-donor-day-and-save-life-concept-blood-donation.jpg?s=612x612&w=0&k=20&c=cCaEOKox791XF6Zhv7xM1ZO9IqkDqHoJpsxPEuv0Z8w=" alt="Request Blood">
+        <h3>Request Blood</h3>
+        <p>Streamline the blood request process and fulfill requests promptly for those in need.</p>
+    </div>
+</div>
+
+
+  
+{% endblock %}

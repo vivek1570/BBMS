@@ -1,0 +1,21 @@
+{% extends 'authenticate/base_2.html' %}
+
+{% block title%}
+conf-donor
+{% endblock %}
+
+{% block content %}
+{% comment %} 
+<h1>added succesfully</h1>
+<br>
+<p>{{ obj2.d_name }}</p>
+<p>{{ obj2.p_id }}</p>
+<p>{{ obj2.d_b_group }}</p> {% endcomment %}
+
+<div class="container mt-5">
+    <div class="alert alert-success" role="alert">
+      {{ obj2.d_name }} data has been added successfully!
+    </div>
+  </div>
+  
+{% endblock %}

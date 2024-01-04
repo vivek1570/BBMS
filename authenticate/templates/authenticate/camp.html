@@ -1,0 +1,41 @@
+{% extends 'authenticate/base_2.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%}
+Request Blood
+{% endblock %}
+
+{% block content%}
+<div class="container">
+    <h1 class="mt-5">Blood Donation Camp Details</h1>
+    
+    <!-- Blood Donation Camp Information -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Upcoming Blood Donation Camp</h5>
+            <p class="card-text">
+                <strong>Date:</strong> January 15, 2023<br>
+                <strong>Time:</strong> 9:00 AM - 3:00 PM<br>
+                <strong>Location:</strong> Location<br>
+                <strong>Contact:</strong> Contact Information
+            </p>
+            <p class="card-text">Join us in saving lives by donating blood at our upcoming camp.</p>
+            <a href="#" class="btn btn-primary">Register to Donate</a>
+        </div>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="mt-4">
+        <h2>Why Donate Blood?</h2>
+        <p>
+            Donating blood is a simple yet impactful way to contribute to your community and save lives. 
+            Every drop counts, and your donation can make a significant difference.
+        </p>
+        <!-- Add more content as needed -->
+    </div>
+</div>
+
+
+
+
+{% endblock %}

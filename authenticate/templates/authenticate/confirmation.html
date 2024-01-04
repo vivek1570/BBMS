@@ -1,0 +1,36 @@
+{% extends 'authenticate/base_2.html' %}
+
+{% block content %}
+
+{% comment %} <h3 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 30px; font-weight: bold;padding: 20px 0;">Added Succesfully</h3> {% endcomment %}
+
+
+<div class="container mt-5">
+  <div class="alert alert-success" role="alert">
+    {{ person.p_name }} data has been added successfully!
+  </div>
+</div>
+
+
+
+<div class="card mb-4 rounded-3 shadow-sm">
+    <div class="card-header py-3">
+      <h4 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 30px; font-weight: bold;padding: 20px 0;",class="my-0 fw-normal">Person Info</h4>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title pricing-card-title">{{ person.p_name }}</h2>
+      <ul class="list-unstyled mt-3 mb-4">
+        <li>Phone: {{ person.p_phone }}</li>
+        <li>Blood Group: {{ person.p_b_group }}</li>
+        <li>Address: {{ person.p_add }}</li>
+        <li>Age: {{ person.p_age }}</li>
+        <li>Location: {{ person.p_loc }}</li>
+        <br>
+      </ul>
+      {% comment %} <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> {% endcomment %}
+    </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'authenticate/base_2.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%}
+Person-Info
+{% endblock %}
+
+{% block content%}
+    <style>
+
+        #stock {
+            background-color: #ffffff; /* White background for stock details */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            text-align: center; /* Center the content inside the container */
+        }
+
+        #stock table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #stock th, #stock td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #stock th {
+            background-color: #922b21;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Additional styles for containers inside the main content area */
+        .info-container {
+            background-color: #ffffff; /* White background for containers */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+
+
+        
+
+
+
+
+    </style>
+    <div id="stock">
+        <h3 style="text-align: center; font-family: 'Your Preferred Font', sans-serif; font-size: 30px; font-weight: bold;">Person Info</h3>
+        <table>
+            <tr>
+                <th>P-Id</th>
+                <th>Name</th>
+                <th>Blood-Group</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Age</th>
+                <th>Location</th>
+            </tr>
+            {% for person in data %}
+            <tr>
+                <td>{{ person.id }}</td>
+                <td>{{ person.p_name }}</td>
+                <td>{{ person.p_b_group }}</td>
+                <td>{{ person.p_phone }}</td>
+                <td>{{ person.p_add }}</td>
+                <td>{{ person.p_age }}</td>
+                <td>{{ person.p_loc }}</td>
+            </tr>
+        {% endfor %}
+            
+        </table>
+    </div>
+
+{% endblock %}
+
